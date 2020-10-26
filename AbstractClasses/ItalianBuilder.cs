@@ -39,7 +39,7 @@ namespace Lab2.AbstractClasses
               this._pizza.Add("Meat");
         }
 
-        public object GetPizza()
+        public IPizza GetPizza()
         {
             ItalianPizza result = this._pizza;
             this.Reset();

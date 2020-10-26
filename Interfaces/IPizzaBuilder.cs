@@ -14,6 +14,6 @@ namespace Lab2.Interfaces
 
         void AddMeat();
 
-        object GetPizza();
+        IPizza GetPizza();
     }
 }

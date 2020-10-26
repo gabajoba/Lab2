@@ -41,7 +41,7 @@ namespace Lab2.AbstractClasses
             Console.WriteLine("You can't add Meat in Margarita");
         }
       
-        public object GetPizza()
+        public IPizza GetPizza()
         {
             MargaritaPizza result = this._pizza;
             this.Reset();

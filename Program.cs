@@ -26,7 +26,8 @@ namespace Lab2
                     case "2": builder.AddTomatoes(); loopBreak = false; break;
                     case "3": builder.AddOlives(); loopBreak = false; break;
                     case "4": builder.AddMeat(); loopBreak = false; break;
-                    case "5": Console.Write(builder.GetPizza().ListIngredients()); loopBreak = true; break; 
+                    case "5": Console.Write(builder.GetPizza()
+                                                   .ListIngredients()); loopBreak = true; break; 
                     case "0": loopBreak = true; break;
                     default: Console.WriteLine("Enter the required number\n"); break;
                 }
@@ -45,17 +46,18 @@ namespace Lab2
             while(str != "0")
             {               
                 Console.WriteLine("Choose your option:\n");
-                Console.WriteLine("1 - Margarita\n2 - Carbonara\n" +
-                    "3 - Italian\n4 - Pepperoni\n" +
-                    "5 - Custom pizza\n\n0 - exit\n");
+                Console.WriteLine("1 - Margarita\n" +
+                    "2 - Carbonara\n" +
+                    "3 - Italian\n" +
+                    "4 - Pepperoni\n\n\n" +
+                    "0 - exit\n");
                 str = Console.ReadLine();
                 switch (str)
                 {
                     case "1": MakeSomePizza(new MargaritaBuilder()); break;
                     case "2": MakeSomePizza(new CarbonaraBuilder()); break; 
                     case "3": MakeSomePizza(new ItalianBuilder()); break;                        
-                    case "4": MakeSomePizza(new PepperoniBuilder()); break; 
-                    case "5": MakeSomePizza(new CustomBuilder()); break;                     
+                    case "4": MakeSomePizza(new PepperoniBuilder()); break;                                  
                     case "0": Environment.Exit(0); break; 
                     default: Console.WriteLine("Enter the required number\n"); break;
                 }

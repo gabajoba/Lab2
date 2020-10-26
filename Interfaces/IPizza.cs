@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Lab2.Interfaces
 {
-   public interface IPizza
+    public interface IPizza
     {
-
-    }
+        string ListIngredients();
+    }      
 }
