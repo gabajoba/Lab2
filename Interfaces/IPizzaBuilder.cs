@@ -1,9 +1,11 @@
-﻿namespace Lab2.Interfaces
+﻿using Lab2.Classes;
+
+namespace Lab2.Interfaces
 {
     
     public interface IPizzaBuilder
-    {
-        void SetName(string str);
+    {       
+        void Reset();
         void AddCheese();
 
         void AddTomatoes();
@@ -11,5 +13,7 @@
         void AddOlives();
 
         void AddMeat();
+
+        object GetPizza();
     }
 }

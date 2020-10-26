@@ -1,5 +1,6 @@
 ﻿using Lab1.Classes;
 using Lab2.AbstractClasses;
+using Lab2.Interfaces;
 using System;
 
 namespace Lab2
@@ -7,7 +8,7 @@ namespace Lab2
 
     class Program
     {
-        public static void MakeCustomPizza(PizzaMaker builder)
+        public static void MakeSomePizza(IPizzaBuilder builder)
         {
             bool loopBreak = true;
             string str = null;
@@ -27,7 +28,7 @@ namespace Lab2
                     case "4": builder.AddMeat(); loopBreak = false; break;
                     case "5": Console.Write(builder.GetPizza().ListIngredients()); loopBreak = true; break; 
                     case "0": loopBreak = true; break;
-                    default: Console.WriteLine("Enter the required number"); break;
+                    default: Console.WriteLine("Enter the required number\n"); break;
                 }
                 if(loopBreak != false)
                 {
@@ -38,15 +39,11 @@ namespace Lab2
             }
         }
         static void Main(string[] args)
-        {      
-            var director = new Cafe();
-            var builder = new PizzaMaker();
-            director.Builder = builder;                    
+        {                         
             string str = null;
 
             while(str != "0")
-            {
-                
+            {               
                 Console.WriteLine("Choose your option:\n");
                 Console.WriteLine("1 - Margarita\n2 - Carbonara\n" +
                     "3 - Italian\n4 - Pepperoni\n" +
@@ -54,41 +51,13 @@ namespace Lab2
                 str = Console.ReadLine();
                 switch (str)
                 {
-                    case "1":
-                        {
-                            director.makeMargarita();
-                            Console.WriteLine(builder.GetPizza().ListIngredients());
-                            break;
-                        }
-                    case "2": 
-                        { 
-                            director.makeCarbonara(); 
-                            Console.WriteLine(builder.GetPizza().ListIngredients()); 
-                            break; 
-                        }
-                    case "3": 
-                        { 
-                            director.makeItalian(); 
-                            Console.WriteLine(builder.GetPizza().ListIngredients()); 
-                            break; 
-                        }
-                    case "4": 
-                        { 
-                            director.makePepperoni();
-                            Console.WriteLine(builder.GetPizza().ListIngredients());
-                            break; 
-                        }
-                    case "5":
-                        { 
-                            MakeCustomPizza(builder);
-                            break; 
-                        }
-                    case "0":
-                        { 
-                            Environment.Exit(0);
-                            break; 
-                        }
-                    default: Console.WriteLine("Enter the required number"); break;
+                    case "1": MakeSomePizza(new MargaritaBuilder()); break;
+                    case "2": MakeSomePizza(new CarbonaraBuilder()); break; 
+                    case "3": MakeSomePizza(new ItalianBuilder()); break;                        
+                    case "4": MakeSomePizza(new PepperoniBuilder()); break; 
+                    case "5": MakeSomePizza(new CustomBuilder()); break;                     
+                    case "0": Environment.Exit(0); break; 
+                    default: Console.WriteLine("Enter the required number\n"); break;
                 }
             }     
         }

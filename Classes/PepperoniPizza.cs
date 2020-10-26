@@ -1,19 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using Lab2.Interfaces;
+using System.Collections.Generic;
 
 namespace Lab2.Classes
 {
-    public class Pizza
+    public class PepperoniPizza : IPizza
     {
-        private string _pizzaName;
-
-        public Pizza(string pizzaName)
-        {
-            _pizzaName = pizzaName;
-        }
-        public void SetName(string name)
-        {
-            _pizzaName = name;
-        }
+        readonly private string _pizzaName = "Pepperoni";
 
         private List<object> _ingredients = new List<object>();
 
@@ -30,7 +22,7 @@ namespace Lab2.Classes
             {
                 str += this._ingredients[i] + ", ";
             }
-            str = str.Remove(str.Length - 2); 
+            str = str.Remove(str.Length - 2);
 
             return $"{str}\n";
         }

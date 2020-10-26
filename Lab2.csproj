@@ -43,10 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractClasses\PizzaMaker.cs" />
+    <Compile Include="AbstractClasses\CarbonaraBuilder.cs" />
+    <Compile Include="AbstractClasses\ItalianBuilder.cs" />
+    <Compile Include="AbstractClasses\MargaritaBuilder.cs" />
+    <Compile Include="AbstractClasses\PepperoniBuilder.cs" />
     <Compile Include="Classes\Cafe.cs" />
+    <Compile Include="Classes\CarbonaraPizza.cs" />
+    <Compile Include="Classes\ItalianPizza.cs" />
+    <Compile Include="Classes\MargaritaPizza.cs" />
+    <Compile Include="Classes\PepperoniPizza.cs" />
+    <Compile Include="Interfaces\IPizza.cs" />
     <Compile Include="Interfaces\IPizzaBuilder.cs" />
-    <Compile Include="Classes\Pizza.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

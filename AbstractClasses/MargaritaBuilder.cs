@@ -1,28 +1,25 @@
 ﻿using Lab2.Classes;
 using Lab2.Interfaces;
+using System;
 
 namespace Lab2.AbstractClasses
 {
-    
-    public class PizzaMaker : IPizzaBuilder
+
+    public class MargaritaBuilder : IPizzaBuilder
     {
 
-        private Pizza _pizza = new Pizza("Custom");        
+        private MargaritaPizza _pizza = new MargaritaPizza();
 
-        public PizzaMaker()
+        public MargaritaBuilder()
         {
             this.Reset();
         }
 
         public void Reset()
         {
-            this._pizza = new Pizza("Custom");
+            this._pizza = new MargaritaPizza();
         }
-
-        public void SetName(string str)
-        {
-            _pizza.SetName(str);
-        }
+      
         public void AddCheese()
         {
             this._pizza.Add("Cheese");
@@ -40,12 +37,13 @@ namespace Lab2.AbstractClasses
 
         public void AddMeat()
         {
-            this._pizza.Add("Meat");
+            //  this._pizza.Add("Meat");
+            Console.WriteLine("You can't add Meat in Margarita");
         }
       
-        public Pizza GetPizza()
+        public object GetPizza()
         {
-            Pizza result = this._pizza;
+            MargaritaPizza result = this._pizza;
             this.Reset();
 
             return result;
