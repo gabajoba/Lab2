@@ -7,7 +7,6 @@ namespace Lab2.Classes
     {
         readonly private string _pizzaName = "Italian";
 
-
         private List<object> _ingredients = new List<object>();
 
         public void Add(string ingredient)

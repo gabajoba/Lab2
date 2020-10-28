@@ -16,9 +16,13 @@ namespace Lab2
             {
                 
                 Console.WriteLine("\nChoose your option:\n");
-                Console.WriteLine("1 - Add Cheese\n2 - Add Tomatoes\n" +
-                    "3 - Add Olives\n4 - Add Meat\n" +
-                    "5 - Make Pizza\n\n0 - exit\n");
+                Console.WriteLine("" +
+                    "1 - Add Cheese\n" +
+                    "2 - Add Tomatoes\n" +
+                    "3 - Add Olives\n" +
+                    "4 - Add Meat\n" +
+                    "5 - Make Pizza\n" +
+                    "\n0 - exit\n");
                 str = Console.ReadLine();
                 switch (str)
                 {
